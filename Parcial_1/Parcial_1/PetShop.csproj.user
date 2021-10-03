@@ -10,31 +10,31 @@
     <Compile Update="FrmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Nuevo\FrmEditarUsuario.cs">
+    <Compile Update="FrmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Nuevo\FrmAltaUsuario.cs">
+    <Compile Update="FrmAltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Nuevo\FrmListaUsuario.cs">
+    <Compile Update="FrmListaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Nuevo\FrmEditarCliente.cs">
+    <Compile Update="FrmEditarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Nuevo\FrmListaClientes.cs">
+    <Compile Update="FrmListaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Nuevo\FrmLogin.cs">
+    <Compile Update="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Nuevo\FrmAltaCliente.cs">
+    <Compile Update="FrmAltaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Nuevo\FrmMenuPrincipal.cs">
+    <Compile Update="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

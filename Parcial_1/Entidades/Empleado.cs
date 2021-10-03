@@ -10,19 +10,32 @@ namespace Entidades
     {
         private double sueldo;
 
+        /// <summary>
+        /// Construye un Empleado a partir del constructor de Usuario y agregando el atributo sueldo
+        /// </summary>
+        /// <param name="nombreUsuario"></param>
+        /// <param name="contrasenia"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="sueldo"></param>
         public Empleado(string nombreUsuario, string contrasenia, string nombre, string apellido, int dni, double sueldo) : base (nombreUsuario, contrasenia, nombre, apellido, dni)
         {
             this.sueldo = sueldo;
         }
                
-
+        /// <summary>
+        /// Propiedad get y set del atributo sueldo
+        /// </summary>
         public double Sueldo
         {
             get { return this.sueldo; }
             set { this.sueldo = value; }
         }
 
-
+        /// <summary>
+        /// Define el metodo que edita los campos del Usuario
+        /// </summary>
        public override void EditarUsuario()
         {
             foreach (Usuario usuario in Petshop.ListaUsuarios)
@@ -44,6 +57,11 @@ namespace Entidades
 
         }                       
 
+        /// <summary>
+        /// Busca un empleado por ID y lo retorna
+        /// </summary>
+        /// <param name="idEmpleado"></param>
+        /// <returns>Empleado si lo encuentra, sino null</returns>
         public static Empleado BuscarEmpleadoPorId(int idEmpleado)
         {
             Empleado auxEmpleado = null;
@@ -60,6 +78,11 @@ namespace Entidades
             return auxEmpleado;
         }
 
+        /// <summary>
+        /// Agrega un usuario a la lista
+        /// </summary>
+        /// <param name="auxUsuario"></param>
+        /// <returns>true si lo logra, sino false</returns>
         public static bool AgregarUsuario(Usuario auxUsuario)
         {
             bool resultado;
@@ -76,9 +99,7 @@ namespace Entidades
 
             return resultado;
 
-        }
-
-        
+        }      
 
 
     }

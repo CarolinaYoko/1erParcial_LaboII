@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Listado de tipos de Productos
+    /// </summary>
     public enum ETipoDeProductos
     {
         Alimentos,
@@ -15,24 +18,30 @@ namespace Entidades
 
     }
 
+    /// <summary>
+    /// Listados de tipo de Usuarios
+    /// </summary>
     public enum EUsuarios
-    {        
+    {
         Empleado,
         Administrador
-
     }
+
 
     public static class Petshop
     {
+
         public static List<Usuario> ListaUsuarios;
         public static List<Cliente> ListaClientes;
         public static Dictionary<Producto, int> ListaProductos;
         static double recaudacionDelDia;
 
-        
-                
+
+        /// <summary>
+        /// Construye un Petshop e instancia su respectiva Lista de Usuarios, lista de clientes, lista de productos y la recaudacion del dia
+        /// </summary>        
         static Petshop()
-        { 
+        {
             Petshop.ListaUsuarios = new List<Usuario>();
             Petshop.ListaClientes = new List<Cliente>();
             Petshop.ListaProductos = new Dictionary<Producto, int>();
@@ -41,30 +50,37 @@ namespace Entidades
             CargarUsuarios();
             CargarClientes();
             CargarProductos();
-
         }
 
-      
+        /// <summary>
+        /// Propiedad con get del atributo recaudacionDelDia
+        /// </summary>
         public static double RecaudacionDelDia
         {
             get { return Petshop.recaudacionDelDia; }
-            
+
         }
 
+        /// <summary>
+        /// Carga por defecto empleados y administradores
+        /// </summary>
         private static void CargarUsuarios()
         {
-            Empleado e1 = new Empleado("marta", "asd123", "Marta","Rodriguez", 34323323, 40000.00);
+            Empleado e1 = new Empleado("marta", "asd123", "Marta", "Rodriguez", 34323323, 40000.00);
             Empleado e2 = new Empleado("jorge", "1234", "Jorge", "Hernandez", 23999000, 50000.00);
             Administrador a1 = new Administrador("gabriel", "qwe123", "Gabriel", "Perez", 3475884, 60000, 2000);
             Administrador a2 = new Administrador("franco", "zxc123", "Franco", "Garcia", 47382992, 70000, 4000);
-           
 
             Petshop.ListaUsuarios.Add(e1);
             Petshop.ListaUsuarios.Add(e2);
             Petshop.ListaUsuarios.Add(a1);
             Petshop.ListaUsuarios.Add(a2);
-           
+
         }
+
+        /// <summary>
+        /// Carga por defecto clientes
+        /// </summary>
         private static void CargarClientes()
         {
             Cliente c1 = new Cliente("Carolina", "Yokoyama", 42699266, 5000);
@@ -74,6 +90,9 @@ namespace Entidades
             Petshop.ListaClientes.Add(c2);
         }
 
+        /// <summary>
+        /// Carga por defecto productos
+        /// </summary>
         private static void CargarProductos()
         {
             Producto p1 = new Producto(ETipoDeProductos.Alimentos, "Royal Caning", 600, "Urinari para gatos 1kg");
@@ -99,11 +118,14 @@ namespace Entidades
             ListaProductos.Add(p9, 300);
             ListaProductos.Add(p10, 300);
             ListaProductos.Add(p11, 300);
-
-
         }
 
-
+        /// <summary>
+        /// Descuenta del stock del producto (identificado por id) la cantidad comprada
+        /// </summary>
+        /// <param name="idProducto"></param>
+        /// <param name="cantidad"></param>
+        /// <returns>true si lo logró descaontrar, sino false</returns>
         public static bool DescontarDeStock(int idProducto, int cantidad)
         {
             bool resultado = false;
@@ -113,16 +135,20 @@ namespace Entidades
                 if (producto.Key.idProducto == idProducto)
                 {
                     Petshop.ListaProductos.Remove(producto.Key);
-                    Petshop.ListaProductos.Add(producto.Key, producto.Value - cantidad);                    
+                    Petshop.ListaProductos.Add(producto.Key, producto.Value - cantidad);
                     resultado = true;
                     break;
                 }
-            }                     
+            }
 
             return resultado;
 
         }
 
+        /// <summary>
+        /// Aumenta la recuadacion con la cantidad recibida en la venta
+        /// </summary>
+        /// <param name="nuevaVenta"></param>
         public static void AumentarRecaudacion(double nuevaVenta)
         {
             Petshop.recaudacionDelDia += nuevaVenta;
