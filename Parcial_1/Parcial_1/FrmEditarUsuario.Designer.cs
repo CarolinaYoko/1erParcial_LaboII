@@ -38,7 +38,6 @@ namespace PetShop
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseniaUsuario = new System.Windows.Forms.TextBox();
             this.txtNickNombreUsuario = new System.Windows.Forms.TextBox();
-            this.cmbUsuario = new System.Windows.Forms.ComboBox();
             this.btnCerrarEditarUsuario = new System.Windows.Forms.Button();
             this.txtBono = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -59,7 +58,7 @@ namespace PetShop
             // 
             this.btnEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditarUsuario.Location = new System.Drawing.Point(187, 508);
+            this.btnEditarUsuario.Location = new System.Drawing.Point(179, 502);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Size = new System.Drawing.Size(210, 48);
             this.btnEditarUsuario.TabIndex = 16;
@@ -70,7 +69,7 @@ namespace PetShop
             // txtSueldoUsuario
             // 
             this.txtSueldoUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSueldoUsuario.Location = new System.Drawing.Point(101, 404);
+            this.txtSueldoUsuario.Location = new System.Drawing.Point(109, 358);
             this.txtSueldoUsuario.Name = "txtSueldoUsuario";
             this.txtSueldoUsuario.PlaceholderText = "Sueldo";
             this.txtSueldoUsuario.Size = new System.Drawing.Size(393, 26);
@@ -80,7 +79,7 @@ namespace PetShop
             // txtDni
             // 
             this.txtDni.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDni.Location = new System.Drawing.Point(101, 347);
+            this.txtDni.Location = new System.Drawing.Point(109, 301);
             this.txtDni.Name = "txtDni";
             this.txtDni.PlaceholderText = "D.N.I";
             this.txtDni.Size = new System.Drawing.Size(393, 26);
@@ -90,7 +89,7 @@ namespace PetShop
             // txtApellidoUsuario
             // 
             this.txtApellidoUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtApellidoUsuario.Location = new System.Drawing.Point(101, 290);
+            this.txtApellidoUsuario.Location = new System.Drawing.Point(109, 244);
             this.txtApellidoUsuario.Name = "txtApellidoUsuario";
             this.txtApellidoUsuario.PlaceholderText = "Apellido";
             this.txtApellidoUsuario.Size = new System.Drawing.Size(393, 26);
@@ -100,7 +99,7 @@ namespace PetShop
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombreUsuario.Location = new System.Drawing.Point(101, 233);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(109, 187);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.PlaceholderText = "Nombre";
             this.txtNombreUsuario.Size = new System.Drawing.Size(393, 26);
@@ -110,7 +109,7 @@ namespace PetShop
             // txtContraseniaUsuario
             // 
             this.txtContraseniaUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtContraseniaUsuario.Location = new System.Drawing.Point(101, 176);
+            this.txtContraseniaUsuario.Location = new System.Drawing.Point(109, 130);
             this.txtContraseniaUsuario.Name = "txtContraseniaUsuario";
             this.txtContraseniaUsuario.PlaceholderText = "Contraseña";
             this.txtContraseniaUsuario.Size = new System.Drawing.Size(393, 26);
@@ -120,22 +119,12 @@ namespace PetShop
             // txtNickNombreUsuario
             // 
             this.txtNickNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNickNombreUsuario.Location = new System.Drawing.Point(101, 119);
+            this.txtNickNombreUsuario.Location = new System.Drawing.Point(109, 73);
             this.txtNickNombreUsuario.Name = "txtNickNombreUsuario";
             this.txtNickNombreUsuario.PlaceholderText = "Nombre de usuario";
             this.txtNickNombreUsuario.Size = new System.Drawing.Size(393, 26);
             this.txtNickNombreUsuario.TabIndex = 10;
             this.txtNickNombreUsuario.TextChanged += new System.EventHandler(this.txtNickNombreUsuario_TextChanged);
-            // 
-            // cmbUsuario
-            // 
-            this.cmbUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbUsuario.FormattingEnabled = true;
-            this.cmbUsuario.Location = new System.Drawing.Point(100, 60);
-            this.cmbUsuario.Name = "cmbUsuario";
-            this.cmbUsuario.Size = new System.Drawing.Size(394, 28);
-            this.cmbUsuario.TabIndex = 9;
-            this.cmbUsuario.SelectedValueChanged += new System.EventHandler(this.cmbUsuario_SelectedValueChanged);
             // 
             // btnCerrarEditarUsuario
             // 
@@ -153,7 +142,7 @@ namespace PetShop
             // txtBono
             // 
             this.txtBono.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBono.Location = new System.Drawing.Point(101, 461);
+            this.txtBono.Location = new System.Drawing.Point(109, 415);
             this.txtBono.Name = "txtBono";
             this.txtBono.PlaceholderText = "Bono";
             this.txtBono.Size = new System.Drawing.Size(393, 26);
@@ -176,7 +165,6 @@ namespace PetShop
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.txtContraseniaUsuario);
             this.Controls.Add(this.txtNickNombreUsuario);
-            this.Controls.Add(this.cmbUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmEditarUsuario";
             this.Text = "FrmEditarUsuario";
@@ -196,7 +184,6 @@ namespace PetShop
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.TextBox txtContraseniaUsuario;
         private System.Windows.Forms.TextBox txtNickNombreUsuario;
-        private System.Windows.Forms.ComboBox cmbUsuario;
         private System.Windows.Forms.Button btnCerrarEditarUsuario;
         private System.Windows.Forms.TextBox txtBono;
     }

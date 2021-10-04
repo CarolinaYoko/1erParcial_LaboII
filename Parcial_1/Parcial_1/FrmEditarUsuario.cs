@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
 
 namespace PetShop
 {
@@ -23,14 +23,21 @@ namespace PetShop
 
         private void FrmEditarUsuario_Load(object sender, EventArgs e)
         {
-            this.CambiarVistas();
-            txtNickNombreUsuario.Text = usuario.NickNombreUsuario;            
+
+            txtNickNombreUsuario.Text = usuario.NickNombreUsuario;
             txtContraseniaUsuario.Text = usuario.Contrasenia;
             txtNombreUsuario.Text = usuario.Nombre;
             txtApellidoUsuario.Text = usuario.Apellido;
             txtDni.Text = usuario.DNI.ToString();
             txtSueldoUsuario.Text = ((Empleado)usuario).Sueldo.ToString();
-            txtBono.Text = ((Administrador)usuario).Bono.ToString();
+
+            if (usuario.GetType() == typeof(Administrador))
+            {
+                txtBono.Text = ((Administrador)usuario).Bono.ToString();
+            }
+
+
+            this.CambiarVistas();
 
         }
 
@@ -38,58 +45,83 @@ namespace PetShop
         {
             this.Close();
         }
-                
+
         private void txtNickNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-            this.usuario.NickNombreUsuario = txtNickNombreUsuario.Text;
+            if (!string.IsNullOrWhiteSpace(txtNickNombreUsuario.Text))
+            {
+                this.usuario.NickNombreUsuario = txtNickNombreUsuario.Text;
+            }
+
         }
-        
+
         private void txtContraseniaUsuario_TextChanged(object sender, EventArgs e)
         {
-            this.usuario.Contrasenia = txtContraseniaUsuario.Text;
+            if (!string.IsNullOrWhiteSpace(txtContraseniaUsuario.Text))
+            {
+                this.usuario.Contrasenia = txtContraseniaUsuario.Text;
+            }
+
         }
-       
+
         private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-            this.usuario.Nombre = txtNombreUsuario.Text;
+            if (!string.IsNullOrWhiteSpace(txtNombreUsuario.Text))
+            {
+                this.usuario.Nombre = txtNombreUsuario.Text;
+            }
         }
 
         private void txtApellidoUsuario_TextChanged(object sender, EventArgs e)
         {
-            this.usuario.Apellido = txtApellidoUsuario.Text;
+            if (!string.IsNullOrWhiteSpace(txtApellidoUsuario.Text))
+            {
+                this.usuario.Apellido = txtApellidoUsuario.Text;
+            }
         }
 
         private void txtDni_TextChanged(object sender, EventArgs e)
         {
-            this.usuario.DNI = int.Parse(txtDni.Text);
+            int dni;
+            if (int.TryParse(txtDni.Text, out dni))
+            {
+                this.usuario.DNI = dni;
+            }
         }
 
         private void txtSueldoUsuario_TextChanged(object sender, EventArgs e)
-        {            
-            ((Empleado)this.usuario).Sueldo = double.Parse(txtSueldoUsuario.Text);
+        {
+            double sueldo;
+            if (double.TryParse(txtSueldoUsuario.Text, out sueldo))
+            {
+                ((Empleado)this.usuario).Sueldo = sueldo;
+            }
         }
 
         private void txtBono_TextChanged(object sender, EventArgs e)
         {
-            ((Administrador)this.usuario).Bono = double.Parse(txtBono.Text);
+            double bono;
+            if (double.TryParse(txtSueldoUsuario.Text, out bono))
+            {
+                ((Administrador)this.usuario).Bono = bono;
+            }
         }
 
         private void btnEditarUsuario_Click(object sender, EventArgs e)
         {
-            switch ((EUsuarios)cmbUsuario.SelectedItem)
+            if (usuario.GetType() == typeof(Empleado))
             {
-                case EUsuarios.Empleado:
+                ((Empleado)this.usuario).EditarUsuario();
+            }
+            else
+            {
+                ((Administrador)this.usuario).EditarUsuario();
 
-                    ((Empleado)this.usuario).EditarUsuario();
-                    break;
-
-                case EUsuarios.Administrador:
-
-                    ((Administrador)this.usuario).EditarUsuario();
-                    break;
             }
 
-            this.Close();    
+
+
+            this.Close();
 
         }
 
@@ -98,21 +130,18 @@ namespace PetShop
         /// </summary>
         private void CambiarVistas()
         {
-            switch ((EUsuarios)cmbUsuario.SelectedItem)
+            if (usuario.GetType() == typeof(Empleado))
             {
-                case EUsuarios.Administrador:
-                    txtBono.Visible = true;
-                    break;
-                case EUsuarios.Empleado:
-                    txtBono.Visible = false;
-                    break;
+                txtBono.Visible = false;
+            }
+            else
+            {
+                txtBono.Visible = true;
             }
         }
 
-        private void cmbUsuario_SelectedValueChanged(object sender, EventArgs e)
-        {
-            this.CambiarVistas();
-        }
+
+
     }
 
 

@@ -39,17 +39,17 @@ namespace Entidades
         /// </summary>
         public override void EditarUsuario()
         {            
-            foreach (Administrador admin in Petshop.ListaUsuarios)
+            foreach (Usuario admin in Petshop.ListaUsuarios)
             {
-                if (admin.IDUsuario == this.IDUsuario)
+                if (admin is Administrador  && ((Administrador)admin).IDUsuario == this.IDUsuario)
                 {
                     admin.NickNombreUsuario = this.NickNombreUsuario;
                     admin.Contrasenia = this.Contrasenia;
                     admin.DNI = this.DNI;
                     admin.Nombre = this.Nombre;
                     admin.Apellido = this.Apellido;
-                    admin.Sueldo = this.Sueldo;
-                    admin.Bono = this.Bono;
+                    ((Administrador)admin).Sueldo = this.Sueldo;
+                    ((Administrador)admin).Bono = this.Bono;
                     break;
                 }
             }

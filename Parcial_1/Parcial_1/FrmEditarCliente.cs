@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
 
 
 namespace PetShop
@@ -24,7 +24,7 @@ namespace PetShop
         }
 
         private void FrmEditarCliente_Load(object sender, EventArgs e)
-        {            
+        {
             this.btnRegistrarAlta.Text = "Editar";
             txtNombreAlta.Text = cliente.Nombre;
             txtApellidoAlta.Text = cliente.Apellido;
@@ -34,32 +34,45 @@ namespace PetShop
 
         private void txtNombreAlta_TextChanged(object sender, EventArgs e)
         {
-            this.cliente.Nombre = txtNombreAlta.Text;
+            if (!string.IsNullOrWhiteSpace(txtNombreAlta.Text))
+            {
+                this.cliente.Nombre = txtNombreAlta.Text;
+            }
+
         }
 
         private void txtApellidoAlta_TextChanged(object sender, EventArgs e)
         {
-            this.cliente.Apellido = txtApellidoAlta.Text;
+            if (!string.IsNullOrWhiteSpace(txtApellidoAlta.Text))
+            {
+                this.cliente.Apellido = txtApellidoAlta.Text;
+            }
         }
 
         private void txtTelefonoAlta_TextChanged(object sender, EventArgs e)
         {
-            this.cliente.Telefono = long.Parse(txtTelefonoAlta.Text);
+            long telefono;
+            if (long.TryParse(txtTelefonoAlta.Text, out telefono) )
+            {
+                this.cliente.Telefono = telefono;
+            }
         }
 
         private void txtSaldoAlta_TextChanged(object sender, EventArgs e)
         {
-            this.cliente.Saldo = float.Parse(txtSaldoAlta.Text);
+            float saldo;
+            if (float.TryParse(txtSaldoAlta.Text, out saldo))
+            {
+                this.cliente.Saldo = saldo;
+            }
         }
 
         protected override void btnRegistrarAlta_Click(object sender, EventArgs e)
         {
-
             Cliente.EditarCliente(cliente);
             this.Close();
-
         }
 
-       
+
     }
 }
