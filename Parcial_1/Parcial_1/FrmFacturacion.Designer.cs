@@ -51,9 +51,9 @@ namespace PetShop
             this.lblRecaudacion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblRecaudacion.Location = new System.Drawing.Point(295, 159);
             this.lblRecaudacion.Name = "lblRecaudacion";
-            this.lblRecaudacion.Size = new System.Drawing.Size(84, 28);
+            this.lblRecaudacion.Size = new System.Drawing.Size(168, 28);
             this.lblRecaudacion.TabIndex = 1;
-            this.lblRecaudacion.Text = "label1";
+            this.lblRecaudacion.Text = "Recaudacion";
             // 
             // btnCerrarFacturacion
             // 

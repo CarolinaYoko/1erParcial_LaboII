@@ -33,8 +33,8 @@ namespace Parcial_1
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnAcceder = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.lblAdministrador = new System.Windows.Forms.LinkLabel();
+            this.lblEmpleado = new System.Windows.Forms.LinkLabel();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLogin = new System.Windows.Forms.Label();
@@ -77,31 +77,31 @@ namespace Parcial_1
             this.btnAcceder.UseVisualStyleBackColor = false;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
-            // linkLabel1
+            // lblAdministrador
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.linkLabel1.Location = new System.Drawing.Point(307, 286);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(201, 17);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Autocompletar Administrador";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lblAdministrador.AutoSize = true;
+            this.lblAdministrador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAdministrador.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblAdministrador.Location = new System.Drawing.Point(307, 286);
+            this.lblAdministrador.Name = "lblAdministrador";
+            this.lblAdministrador.Size = new System.Drawing.Size(201, 17);
+            this.lblAdministrador.TabIndex = 3;
+            this.lblAdministrador.TabStop = true;
+            this.lblAdministrador.Text = "Autocompletar Administrador";
+            this.lblAdministrador.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAdministrador_LinkClicked);
             // 
-            // linkLabel2
+            // lblEmpleado
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.linkLabel2.Location = new System.Drawing.Point(319, 321);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(178, 17);
-            this.linkLabel2.TabIndex = 4;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Autocompletar Empleado";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.lblEmpleado.AutoSize = true;
+            this.lblEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEmpleado.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblEmpleado.Location = new System.Drawing.Point(319, 321);
+            this.lblEmpleado.Name = "lblEmpleado";
+            this.lblEmpleado.Size = new System.Drawing.Size(178, 17);
+            this.lblEmpleado.TabIndex = 4;
+            this.lblEmpleado.TabStop = true;
+            this.lblEmpleado.Text = "Autocompletar Empleado";
+            this.lblEmpleado.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblEmpleado_LinkClicked);
             // 
             // panelLogin
             // 
@@ -158,8 +158,8 @@ namespace Parcial_1
             this.Controls.Add(this.btnCerrarLogin);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.panelLogin);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.lblEmpleado);
+            this.Controls.Add(this.lblAdministrador);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
@@ -180,8 +180,8 @@ namespace Parcial_1
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnAcceder;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel lblAdministrador;
+        private System.Windows.Forms.LinkLabel lblEmpleado;
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblLogin;

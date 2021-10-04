@@ -36,7 +36,7 @@ namespace PetShop
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCerrarListaProductos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,18 +84,18 @@ namespace PetShop
             this.Stock.HeaderText = "Stock";
             this.Stock.Name = "Stock";
             // 
-            // button1
+            // btnCerrarListaProductos
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(557, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCerrarListaProductos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrarListaProductos.BackgroundImage")));
+            this.btnCerrarListaProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrarListaProductos.FlatAppearance.BorderSize = 0;
+            this.btnCerrarListaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarListaProductos.Location = new System.Drawing.Point(557, 12);
+            this.btnCerrarListaProductos.Name = "btnCerrarListaProductos";
+            this.btnCerrarListaProductos.Size = new System.Drawing.Size(30, 30);
+            this.btnCerrarListaProductos.TabIndex = 1;
+            this.btnCerrarListaProductos.UseVisualStyleBackColor = true;
+            this.btnCerrarListaProductos.Click += new System.EventHandler(this.btnCerrarListaProductos_Click);
             // 
             // FrmListaProductos
             // 
@@ -103,7 +103,7 @@ namespace PetShop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(600, 600);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCerrarListaProductos);
             this.Controls.Add(this.dgProductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(600, 600);
@@ -123,6 +123,6 @@ namespace PetShop
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCerrarListaProductos;
     }
 }

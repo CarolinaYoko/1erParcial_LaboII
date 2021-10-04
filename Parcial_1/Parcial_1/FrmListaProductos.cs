@@ -29,7 +29,7 @@ namespace PetShop
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCerrarListaProductos_Click(object sender, EventArgs e)
         {
             this.Close();
         }

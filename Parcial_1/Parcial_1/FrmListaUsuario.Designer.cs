@@ -32,7 +32,7 @@ namespace PetShop
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListaUsuario));
             this.btnCerrarListaUsuarios = new System.Windows.Forms.Button();
             this.dgUsuario = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,13 +60,14 @@ namespace PetShop
             this.dgUsuario.Size = new System.Drawing.Size(576, 458);
             this.dgUsuario.TabIndex = 1;
             // 
-            // comboBox1
+            // cmbTipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(167, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(257, 23);
-            this.comboBox1.TabIndex = 2;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(167, 38);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(257, 23);
+            this.cmbTipo.TabIndex = 2;
+            this.cmbTipo.SelectedValueChanged += new System.EventHandler(this.cmbTipo_SelectedValueChanged);
             // 
             // FrmListaUsuario
             // 
@@ -74,7 +75,7 @@ namespace PetShop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(600, 600);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.dgUsuario);
             this.Controls.Add(this.btnCerrarListaUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -93,6 +94,6 @@ namespace PetShop
 
         private System.Windows.Forms.Button btnCerrarListaUsuarios;
         private System.Windows.Forms.DataGridView dgUsuario;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTipo;
     }
 }

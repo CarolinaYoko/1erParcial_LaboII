@@ -109,7 +109,7 @@ namespace Entidades
 
         }
 
-        
+
         /// <summary>
         /// Valida que los campos ingresados correspondan a los registrados en la aplicación
         /// </summary>
@@ -122,7 +122,7 @@ namespace Entidades
 
             foreach (Usuario itemUsuario in Petshop.ListaUsuarios)          
             {                     
-                if(itemUsuario.nombre == auxUsuario && itemUsuario.contrasenia == auxContrasenia) 
+                if(itemUsuario.NickNombreUsuario == auxUsuario && itemUsuario.contrasenia == auxContrasenia) 
                 {
                     usuarioLogueado = itemUsuario;
                     break;

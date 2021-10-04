@@ -13,17 +13,14 @@ using PetShop; // Ver por qué hay que usar ese using a pesar de estar en el mis
 namespace Parcial_1
 {
     public partial class FrmLogin : Form
-    {
-        
+    {        
         public FrmLogin()
         {
             InitializeComponent();    
-
         }
        
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-
             Usuario auxUsuario = Usuario.ValidarUsuario(txtUsuario.Text, txtPassword.Text);
 
             if (auxUsuario != null)
@@ -42,17 +39,17 @@ namespace Parcial_1
                            
         }       
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lblAdministrador_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             
-            this.txtUsuario.Text = Petshop.ListaUsuarios[3].Nombre;
+            this.txtUsuario.Text = Petshop.ListaUsuarios[3].NickNombreUsuario;
             this.txtPassword.Text = Petshop.ListaUsuarios[3].Contrasenia;
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lblEmpleado_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-            this.txtUsuario.Text = Petshop.ListaUsuarios[0].Nombre;
+            this.txtUsuario.Text = Petshop.ListaUsuarios[0].NickNombreUsuario;
             this.txtPassword.Text = Petshop.ListaUsuarios[0].Contrasenia;
         }
 

@@ -99,8 +99,24 @@ namespace Entidades
 
             return resultado;
 
-        }      
+        }
 
+        /// <summary>
+        /// Filtra los usuarios de tipo administrador y los guarda en una lista
+        /// </summary>
+        /// <returns> Lista de usuarios de tipo Empleado</returns>
+        public static List<Usuario> FiltrarEmpleados()
+        {
+            List<Usuario> auxLista = new List<Usuario>();
 
+            foreach (Usuario usuario in Petshop.ListaUsuarios)
+            {
+                if (usuario.GetType() == typeof(Empleado))
+                {
+                    auxLista.Add(usuario);
+                }
+            }
+            return auxLista;
+        }
     }
 }

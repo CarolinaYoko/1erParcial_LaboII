@@ -23,12 +23,14 @@ namespace PetShop
 
         private void FrmEditarUsuario_Load(object sender, EventArgs e)
         {
+            this.CambiarVistas();
             txtNickNombreUsuario.Text = usuario.NickNombreUsuario;            
             txtContraseniaUsuario.Text = usuario.Contrasenia;
             txtNombreUsuario.Text = usuario.Nombre;
             txtApellidoUsuario.Text = usuario.Apellido;
             txtDni.Text = usuario.DNI.ToString();
             txtSueldoUsuario.Text = ((Empleado)usuario).Sueldo.ToString();
+            txtBono.Text = ((Administrador)usuario).Bono.ToString();
 
         }
 
@@ -41,11 +43,12 @@ namespace PetShop
         {
             this.usuario.NickNombreUsuario = txtNickNombreUsuario.Text;
         }
+        
         private void txtContraseniaUsuario_TextChanged(object sender, EventArgs e)
         {
             this.usuario.Contrasenia = txtContraseniaUsuario.Text;
         }
-
+       
         private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
             this.usuario.Nombre = txtNombreUsuario.Text;
@@ -62,8 +65,7 @@ namespace PetShop
         }
 
         private void txtSueldoUsuario_TextChanged(object sender, EventArgs e)
-        {
-            
+        {            
             ((Empleado)this.usuario).Sueldo = double.Parse(txtSueldoUsuario.Text);
         }
 
@@ -74,7 +76,6 @@ namespace PetShop
 
         private void btnEditarUsuario_Click(object sender, EventArgs e)
         {
-
             switch ((EUsuarios)cmbUsuario.SelectedItem)
             {
                 case EUsuarios.Empleado:
@@ -88,10 +89,30 @@ namespace PetShop
                     break;
             }
 
-            this.Close();       
+            this.Close();    
 
         }
 
+        /// <summary>
+        /// Cambia la vista según el tipo de usuario que se desea cargar
+        /// </summary>
+        private void CambiarVistas()
+        {
+            switch ((EUsuarios)cmbUsuario.SelectedItem)
+            {
+                case EUsuarios.Administrador:
+                    txtBono.Visible = true;
+                    break;
+                case EUsuarios.Empleado:
+                    txtBono.Visible = false;
+                    break;
+            }
+        }
+
+        private void cmbUsuario_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.CambiarVistas();
+        }
     }
 
 

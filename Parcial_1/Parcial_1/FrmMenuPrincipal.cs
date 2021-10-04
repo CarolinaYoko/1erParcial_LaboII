@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,28 +8,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
 
 namespace PetShop
 {
     public partial class FrmMenuPrincipal : Form
     {
- 
+
+        private Form activeForm = null;
+
         public FrmMenuPrincipal(Usuario usuarioLogueado)
         {
             InitializeComponent();
-            customizeDesign();
+            Personalizar();
             this.ConfiguracionDeVistas(usuarioLogueado);
         }
 
-        private void customizeDesign()
+        /// <summary>
+        /// Oculta los submenu de cliente y empleado
+        /// </summary>
+        private void Personalizar()
         {
             panelSubMenuCliente.Visible = false;
             panelSubMenuEmpleado.Visible = false;
 
-        } 
+        }
 
-        private void hideSubMenu()
+        /// <summary>
+        /// Si los submenu estan visibles, los oculta, y si estan ocultos, los muestra
+        /// </summary>
+        private void OcultarSubmenus()
         {
             if (panelSubMenuCliente.Visible == true)
                 panelSubMenuCliente.Visible = false;
@@ -37,11 +45,15 @@ namespace PetShop
 
         }
 
-        private void showSubmenu(Panel submenu)
+        /// <summary>
+        /// Muestra el panel de submenu ingresado
+        /// </summary>
+        /// <param name="submenu"></param>
+        private void MostrarSubmenus(Panel submenu)
         {
             if (submenu.Visible == false)
             {
-                hideSubMenu();
+                OcultarSubmenus();
                 submenu.Visible = true;
             }
             else
@@ -56,59 +68,58 @@ namespace PetShop
         private void btnClientes_Click(object sender, EventArgs e)
         {
             openChiledForm(new FrmListaClientes());
-            showSubmenu(panelSubMenuCliente);
+            MostrarSubmenus(panelSubMenuCliente);
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             openChiledForm(new FrmListaUsuario());
-            showSubmenu(panelSubMenuEmpleado);
+            MostrarSubmenus(panelSubMenuEmpleado);
         }
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             openChiledForm(new FrmAltaCliente());
-            hideSubMenu();
+            OcultarSubmenus();
         }
 
-       
+
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
             openChiledForm(new FrmEditarCliente(FrmListaClientes.ClienteSeleccion));
-            hideSubMenu();
+            OcultarSubmenus();
         }
 
         private void btnBorrarCliente_Click(object sender, EventArgs e)
         {
             Cliente.EliminarCliente(FrmListaClientes.ClienteSeleccion);
             openChiledForm(new FrmListaClientes());
-            hideSubMenu();
+            OcultarSubmenus();
         }
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
             openChiledForm(new FrmAltaUsuario());
-            hideSubMenu();
+            OcultarSubmenus();
         }
 
         private void btnEditarUsuario_Click(object sender, EventArgs e)
         {
             openChiledForm(new FrmEditarUsuario(FrmListaUsuario.UsuarioSeleccion));
-            hideSubMenu();
+            OcultarSubmenus();
         }
 
         private void btnBorrarUsuario_Click(object sender, EventArgs e)
         {
             Usuario.EliminarUsuario(FrmListaUsuario.UsuarioSeleccion);
             openChiledForm(new FrmListaUsuario());
-
-            hideSubMenu();
+            OcultarSubmenus();
         }
 
-        
+
         private void btnFacturacion_Click(object sender, EventArgs e)
         {
-            openChiledForm(new FrmFacturacion());         
+            openChiledForm(new FrmFacturacion());
 
         }
 
@@ -117,24 +128,31 @@ namespace PetShop
             this.Close();
         }
 
-        private Form activeForm = null;
-        private void openChiledForm(Form childForm)
+
+        /// <summary>
+        /// Muestra un formulario instanciado y lo adapta al panel
+        /// </summary>
+        /// <param name="childForm"></param>
+        private void openChiledForm(Form FormularioHijo)
         {
             if (activeForm != null)
                 activeForm.Close();
-            
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelChild.Controls.Add(childForm);
-            panelChild.Tag = childForm;
-            
-            childForm.BringToFront();
-            childForm.Show();
 
+            activeForm = FormularioHijo;
+            FormularioHijo.TopLevel = false;
+            FormularioHijo.FormBorderStyle = FormBorderStyle.None;
+            FormularioHijo.Dock = DockStyle.Fill;
+            panelChild.Controls.Add(FormularioHijo);
+            panelChild.Tag = FormularioHijo;
+
+            FormularioHijo.BringToFront();
+            FormularioHijo.Show();
         }
 
+        /// <summary>
+        /// Cambia las vistas segun el tipo de usuario logueado (Administrador o Empleado)
+        /// </summary>
+        /// <param name="usuarioLogueado"></param>
         private void ConfiguracionDeVistas(Usuario usuarioLogueado)
         {
             if (usuarioLogueado.GetType() == typeof(Empleado))

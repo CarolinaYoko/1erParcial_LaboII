@@ -41,7 +41,7 @@ namespace PetShop
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAgregarAlCarrito_Click(object sender, EventArgs e)
         {
             int cantidad;
             int idProducto;
@@ -68,7 +68,10 @@ namespace PetShop
 
         }
 
-
+        /// <summary>
+        /// Calcula el importe total la venta
+        /// </summary>
+        /// <returns>importe total o 0</returns>
         private double PrecioTotalDeVenta()
         {
             double total = 0;

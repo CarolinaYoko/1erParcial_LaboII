@@ -19,11 +19,17 @@ namespace PetShop
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Propiedad get del atributo usuarioSeleccion
+        /// </summary>
         public static Usuario UsuarioSeleccion
         {
             get { return FrmListaUsuario.usuarioSeleccion; }           
         }
 
+        /// <summary>
+        /// Actualiza la informacion del DataGrid
+        /// </summary>
         private void ActualizarDataGrid()
         {
             List<Usuario> auxLista = new List<Usuario>();
@@ -50,6 +56,7 @@ namespace PetShop
         {
             this.ActualizarDataGrid();
             this.SeleccionarDato();
+            this.cmbTipo.DataSource = Enum.GetValues(typeof(EUsuarios));
         }
 
         private void FrmListaUsuario_Leave(object sender, EventArgs e)
@@ -57,6 +64,9 @@ namespace PetShop
             this.SeleccionarDato();
         }
 
+        /// <summary>
+        /// Trae el dato seleccionado en el DataGrid
+        /// </summary>
         private void SeleccionarDato()
         {
             int indiceFila = dgUsuario.CurrentRow is not null ? dgUsuario.CurrentRow.Index : -1; ;
@@ -72,5 +82,17 @@ namespace PetShop
 
         }
 
+        private void cmbTipo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            switch ((EUsuarios)cmbTipo.SelectedItem)
+            {
+                case EUsuarios.Administrador:
+                    dgUsuario.DataSource = Administrador.FiltrarAdministradores();
+                    break;
+                case EUsuarios.Empleado:
+                    dgUsuario.DataSource = Empleado.FiltrarEmpleados();
+                    break;
+            }
+        }
     }
 }

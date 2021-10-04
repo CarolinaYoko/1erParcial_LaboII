@@ -16,12 +16,13 @@ namespace PetShop
         public FrmAltaUsuario()
         {
             InitializeComponent();
+            
         }
 
         private void FrmAltaUsuario_Load(object sender, EventArgs e)
         {
             this.cmbUsuario.DataSource = Enum.GetValues(typeof(EUsuarios));
-
+            this.CambiarVistas();
         }
 
         protected virtual void btnAltaUsuario_Click(object sender, EventArgs e)
@@ -52,7 +53,32 @@ namespace PetShop
             }
 
             this.Close();
-        }       
-      
+        }
+
+        /// <summary>
+        /// Cambia la vista según el tipo de usuario que se desea cargar
+        /// </summary>
+        private void CambiarVistas()
+        {
+            switch ((EUsuarios)cmbUsuario.SelectedItem)
+            {
+                case EUsuarios.Administrador:
+                    txtBonoAdmin.Visible = true;
+                    break;
+                case EUsuarios.Empleado:
+                    txtBonoAdmin.Visible = false;
+                    break;
+            }
+        }
+
+        private void cmbUsuario_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.CambiarVistas();
+        }
+
+        private void btnCerrarEditarUsuario_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -59,7 +59,7 @@ namespace PetShop
             // 
             this.btnEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditarUsuario.Location = new System.Drawing.Point(185, 521);
+            this.btnEditarUsuario.Location = new System.Drawing.Point(187, 508);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Size = new System.Drawing.Size(210, 48);
             this.btnEditarUsuario.TabIndex = 16;
@@ -70,71 +70,72 @@ namespace PetShop
             // txtSueldoUsuario
             // 
             this.txtSueldoUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSueldoUsuario.Location = new System.Drawing.Point(99, 417);
+            this.txtSueldoUsuario.Location = new System.Drawing.Point(101, 404);
             this.txtSueldoUsuario.Name = "txtSueldoUsuario";
+            this.txtSueldoUsuario.PlaceholderText = "Sueldo";
             this.txtSueldoUsuario.Size = new System.Drawing.Size(393, 26);
             this.txtSueldoUsuario.TabIndex = 15;
-            this.txtSueldoUsuario.Text = "Sueldo";
             this.txtSueldoUsuario.TextChanged += new System.EventHandler(this.txtSueldoUsuario_TextChanged);
             // 
             // txtDni
             // 
             this.txtDni.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDni.Location = new System.Drawing.Point(99, 360);
+            this.txtDni.Location = new System.Drawing.Point(101, 347);
             this.txtDni.Name = "txtDni";
+            this.txtDni.PlaceholderText = "D.N.I";
             this.txtDni.Size = new System.Drawing.Size(393, 26);
             this.txtDni.TabIndex = 14;
-            this.txtDni.Text = "D.N.I";
             this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // txtApellidoUsuario
             // 
             this.txtApellidoUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtApellidoUsuario.Location = new System.Drawing.Point(99, 303);
+            this.txtApellidoUsuario.Location = new System.Drawing.Point(101, 290);
             this.txtApellidoUsuario.Name = "txtApellidoUsuario";
+            this.txtApellidoUsuario.PlaceholderText = "Apellido";
             this.txtApellidoUsuario.Size = new System.Drawing.Size(393, 26);
             this.txtApellidoUsuario.TabIndex = 13;
-            this.txtApellidoUsuario.Text = "Apellido";
             this.txtApellidoUsuario.TextChanged += new System.EventHandler(this.txtApellidoUsuario_TextChanged);
             // 
             // txtNombreUsuario
             // 
             this.txtNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombreUsuario.Location = new System.Drawing.Point(99, 246);
+            this.txtNombreUsuario.Location = new System.Drawing.Point(101, 233);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.PlaceholderText = "Nombre";
             this.txtNombreUsuario.Size = new System.Drawing.Size(393, 26);
             this.txtNombreUsuario.TabIndex = 12;
-            this.txtNombreUsuario.Text = "Nombre";
             this.txtNombreUsuario.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
             // 
             // txtContraseniaUsuario
             // 
             this.txtContraseniaUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtContraseniaUsuario.Location = new System.Drawing.Point(99, 189);
+            this.txtContraseniaUsuario.Location = new System.Drawing.Point(101, 176);
             this.txtContraseniaUsuario.Name = "txtContraseniaUsuario";
+            this.txtContraseniaUsuario.PlaceholderText = "Contraseña";
             this.txtContraseniaUsuario.Size = new System.Drawing.Size(393, 26);
             this.txtContraseniaUsuario.TabIndex = 11;
-            this.txtContraseniaUsuario.Text = "Contraseña";
             this.txtContraseniaUsuario.TextChanged += new System.EventHandler(this.txtContraseniaUsuario_TextChanged);
             // 
             // txtNickNombreUsuario
             // 
             this.txtNickNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNickNombreUsuario.Location = new System.Drawing.Point(99, 132);
+            this.txtNickNombreUsuario.Location = new System.Drawing.Point(101, 119);
             this.txtNickNombreUsuario.Name = "txtNickNombreUsuario";
+            this.txtNickNombreUsuario.PlaceholderText = "Nombre de usuario";
             this.txtNickNombreUsuario.Size = new System.Drawing.Size(393, 26);
             this.txtNickNombreUsuario.TabIndex = 10;
-            this.txtNickNombreUsuario.Text = "Nombre de usuario";
             this.txtNickNombreUsuario.TextChanged += new System.EventHandler(this.txtNickNombreUsuario_TextChanged);
             // 
             // cmbUsuario
             // 
             this.cmbUsuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbUsuario.FormattingEnabled = true;
-            this.cmbUsuario.Location = new System.Drawing.Point(98, 73);
+            this.cmbUsuario.Location = new System.Drawing.Point(100, 60);
             this.cmbUsuario.Name = "cmbUsuario";
             this.cmbUsuario.Size = new System.Drawing.Size(394, 28);
             this.cmbUsuario.TabIndex = 9;
+            this.cmbUsuario.SelectedValueChanged += new System.EventHandler(this.cmbUsuario_SelectedValueChanged);
             // 
             // btnCerrarEditarUsuario
             // 
@@ -152,11 +153,11 @@ namespace PetShop
             // txtBono
             // 
             this.txtBono.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBono.Location = new System.Drawing.Point(99, 474);
+            this.txtBono.Location = new System.Drawing.Point(101, 461);
             this.txtBono.Name = "txtBono";
+            this.txtBono.PlaceholderText = "Bono";
             this.txtBono.Size = new System.Drawing.Size(393, 26);
             this.txtBono.TabIndex = 19;
-            this.txtBono.Text = "Bono";
             this.txtBono.TextChanged += new System.EventHandler(this.txtBono_TextChanged);
             // 
             // FrmEditarUsuario

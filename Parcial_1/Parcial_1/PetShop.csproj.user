@@ -16,9 +16,6 @@
     <Compile Update="FrmAltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmApp.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="FrmListaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -42,7 +42,6 @@ C:\Users\Carolina\Desktop\1erParcial_LaboII\Parcial_1\Parcial_1\bin\Debug\net5.0
 C:\Users\Carolina\Desktop\1erParcial_LaboII\Parcial_1\Parcial_1\bin\Debug\net5.0-windows\Entidades.dll
 C:\Users\Carolina\Desktop\1erParcial_LaboII\Parcial_1\Parcial_1\bin\Debug\net5.0-windows\Entidades.pdb
 C:\Users\Carolina\Desktop\1erParcial_LaboII\Parcial_1\Parcial_1\obj\Debug\net5.0-windows\PetShop.csproj.AssemblyReference.cache
-C:\Users\Carolina\Desktop\1erParcial_LaboII\Parcial_1\Parcial_1\obj\Debug\net5.0-windows\PetShop.FrmApp.resources
 C:\Users\Carolina\Desktop\1erParcial_LaboII\Parcial_1\Parcial_1\obj\Debug\net5.0-windows\PetShop.FrmFacturacion.resources
 C:\Users\Carolina\Desktop\1erParcial_LaboII\Parcial_1\Parcial_1\obj\Debug\net5.0-windows\PetShop.FrmListaProductos.resources
 C:\Users\Carolina\Desktop\1erParcial_LaboII\Parcial_1\Parcial_1\obj\Debug\net5.0-windows\PetShop.FrmVentas.resources

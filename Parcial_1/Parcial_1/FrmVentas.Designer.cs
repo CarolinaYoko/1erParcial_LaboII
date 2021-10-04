@@ -50,7 +50,7 @@ namespace PetShop
             this.btnAgregarAlCarrito.TabIndex = 2;
             this.btnAgregarAlCarrito.Text = "Agregar";
             this.btnAgregarAlCarrito.UseVisualStyleBackColor = true;
-            this.btnAgregarAlCarrito.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregarAlCarrito.Click += new System.EventHandler(this.btnAgregarAlCarrito_Click);
             // 
             // txtCantidad
             // 
