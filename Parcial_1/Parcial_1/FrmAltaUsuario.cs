@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using Entidades;
 
 namespace PetShop
@@ -27,31 +28,61 @@ namespace PetShop
 
         protected virtual void btnAltaUsuario_Click(object sender, EventArgs e)
         {
+            int dni;
+            double sueldo;
+
             switch ((EUsuarios)cmbUsuario.SelectedItem)
             {
                 case EUsuarios.Empleado:
-                   
-                    Empleado auxEmpleado = new Empleado(txtNickNombreUsuario.Text, 
-                                                        txtContraseniaUsuario.Text, 
-                                                        txtNombreUsuario.Text, 
-                                                        txtApellidoUsuario.Text, 
-                                                        int.Parse(txtDni.Text), 
-                                                        double.Parse(txtSueldoUsuario.Text));
-                    Empleado.AgregarUsuario(auxEmpleado);
+
+                    if (!string.IsNullOrWhiteSpace(txtNickNombreUsuario.Text) &&
+                                                        !string.IsNullOrWhiteSpace(txtContraseniaUsuario.Text) &&
+                                                        !string.IsNullOrWhiteSpace(txtNombreUsuario.Text) &&
+                                                        !string.IsNullOrWhiteSpace(txtApellidoUsuario.Text) &&
+                                                        int.TryParse(txtDni.Text, out dni) == true &&
+                                                        double.TryParse(txtSueldoUsuario.Text, out sueldo) == true)
+                    {
+                        Empleado auxEmpleado = new Empleado(txtNickNombreUsuario.Text,
+                                                            txtContraseniaUsuario.Text,
+                                                            txtNombreUsuario.Text,
+                                                            txtApellidoUsuario.Text,
+                                                            int.Parse(txtDni.Text),
+                                                            double.Parse(txtSueldoUsuario.Text));
+                        Empleado.AgregarUsuario(auxEmpleado);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faltan algunos campos por rellenar o son valores no válidos");
+                    }
                     break;
                 
                 case EUsuarios.Administrador:
 
-                    Administrador auxAdministrador = new Administrador(txtNickNombreUsuario.Text,
+                    if (!string.IsNullOrWhiteSpace(txtNickNombreUsuario.Text) &&
+                                                        !string.IsNullOrWhiteSpace(txtContraseniaUsuario.Text) &&
+                                                        !string.IsNullOrWhiteSpace(txtNombreUsuario.Text) &&
+                                                        !string.IsNullOrWhiteSpace(txtApellidoUsuario.Text) &&
+                                                        int.TryParse(txtDni.Text, out dni) == true &&
+                                                        double.TryParse(txtSueldoUsuario.Text, out sueldo) == true)
+                    {
+                        Administrador auxAdministrador = new Administrador(txtNickNombreUsuario.Text,
                                                         txtContraseniaUsuario.Text,
                                                         txtNombreUsuario.Text,
                                                         txtApellidoUsuario.Text,
                                                         int.Parse(txtDni.Text),
                                                         double.Parse(txtSueldoUsuario.Text), double.Parse(txtBonoAdmin.Text));
-                    Empleado.AgregarUsuario(auxAdministrador);
+                        Empleado.AgregarUsuario(auxAdministrador);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faltan algunos campos por rellenar o son incorrectos");
+                    }
                     break;
             }
-
+            SystemSounds.Asterisk.Play();
+           
+            
+            
             this.Close();
         }
 
